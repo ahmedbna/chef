@@ -154,7 +154,7 @@ export const Chat = memo(
 
     const apiKey = useQuery(api.apiKeys.apiKeyForCurrentMember);
 
-    const [modelSelection, setModelSelection] = useLocalStorage<ModelSelection>('modelSelection', 'auto');
+    const [modelSelection, setModelSelection] = useLocalStorage<ModelSelection>('modelSelection', 'claude-4-sonnet');
     const terminalInitializationOptions = useMemo(
       () => ({
         isReload,
