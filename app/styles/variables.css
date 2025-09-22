@@ -249,7 +249,7 @@ html.dark {
 :root {
   --header-height: 64px;
   --chat-max-width: 37rem;
-  --chat-min-width: 640px;
+  --chat-min-width: 620px;
   --workbench-width: min(calc(100% - var(--chat-min-width)), 2536px);
   --workbench-inner-width: calc(var(--workbench-width) - 16px);
   --workbench-left: calc(100% - var(--workbench-width));

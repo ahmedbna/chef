@@ -28,6 +28,8 @@ import { SubchatLimitNudge } from './SubchatLimitNudge';
 import { useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { subchatIndexStore, useIsSubchatLoaded } from '~/lib/stores/subchats';
+import { useChefAuth } from './ChefAuthWrapper';
+import { Projects } from './projects';
 
 interface BaseChatProps {
   // Refs
@@ -94,6 +96,7 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
     },
     ref,
   ) => {
+    const chefAuthState = useChefAuth();
     const { maintenanceMode } = useLaunchDarkly();
 
     const isStreaming = streamStatus === 'streaming' || streamStatus === 'submitted';
@@ -149,19 +152,20 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
             <div
               className={classNames(styles.Chat, 'flex flex-col flex-grow lg:min-w-[var(--chat-min-width)] h-full', {
                 'items-center px-4 sm:px-8 lg:px-12': !chatStarted,
-                'pt-4': chatStarted,
+                'pt-2.5': chatStarted,
               })}
             >
               {!chatStarted && (
                 <div id="intro" className="mx-auto mb-8 mt-12 max-w-chat px-4 text-center md:mt-16 lg:px-0">
                   <h1 className="mb-2 animate-fadeInFromLoading font-display text-4xl font-black leading-none tracking-tight text-content-primary md:text-5xl lg:mb-4 lg:text-6xl">
-                    Now you&rsquo;re cooking
+                    BNA AI
                   </h1>
                   <p className="animate-fadeInFromLoading text-balance font-display text-lg font-medium text-content-secondary [animation-delay:200ms] [animation-fill-mode:backwards] md:text-xl">
-                    The open-source app generator powered by Convex
+                    FullStack Native Apps in Seconds 🚀
                   </p>
                 </div>
               )}
+
               <div
                 className={classNames('w-full', {
                   'h-full flex flex-col': chatStarted,
@@ -207,6 +211,7 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                     )}
                   </>
                 ) : null}
+
                 <div
                   className={classNames('flex flex-col w-full max-w-chat mx-auto z-prompt relative', {
                     'sticky bottom-four': chatStarted,
@@ -232,6 +237,7 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                       />
                     </div>
                   )}
+
                   {chatEnabled && (!subchats || (currentSubchatIndex >= subchats.length - 1 && isSubchatLoaded)) && (
                     <>
                       {shouldShowNudge && sessionId && (
@@ -273,6 +279,7 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                       )}
                     </>
                   )}
+
                   <AnimatePresence>
                     {disableChatMessage && (
                       <motion.div
@@ -291,8 +298,10 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                     )}
                   </AnimatePresence>
                 </div>
+
                 {!chatEnabled && <CompatibilityWarnings setEnabled={setChatEnabled} />}
               </div>
+
               {maintenanceMode && (
                 <div className="mx-auto my-4 max-w-chat">
                   <div className="relative rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700 dark:border-red-600 dark:bg-red-900 dark:text-red-200">
@@ -303,7 +312,8 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                   </div>
                 </div>
               )}
-              {chatEnabled && (
+
+              {!chatStarted && chatEnabled && chefAuthState.kind == 'fullyLoggedIn' ? (
                 <SuggestionButtons
                   disabled={disableChatMessage !== null}
                   chatStarted={chatStarted}
@@ -311,16 +321,21 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                     messageInputStore.set(suggestion);
                   }}
                 />
-              )}
-              {!chatStarted && <Landing />}
+              ) : null}
+
+              {!chatStarted && chatEnabled && chefAuthState.kind == 'fullyLoggedIn' ? <Projects /> : null}
+
+              {/* {!chatStarted && <Landing />} */}
             </div>
+
             <Workbench
               chatStarted={chatStarted}
               isStreaming={isStreaming}
               terminalInitializationOptions={terminalInitializationOptions}
             />
           </div>
-          {!chatStarted && (
+
+          {/* {!chatStarted && (
             <footer
               id="footer"
               className="flex w-full flex-col justify-between gap-2 p-4 transition-opacity sm:flex-row"
@@ -409,7 +424,7 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                 </p>
               </div>
             </footer>
-          )}
+          )} */}
         </div>
       </div>
     );
@@ -417,4 +432,5 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
     return baseChat;
   },
 );
+
 BaseChat.displayName = 'BaseChat';

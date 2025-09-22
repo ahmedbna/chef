@@ -30,7 +30,7 @@ export const SuggestionButtons = ({ chatStarted, onSuggestionClick, disabled }: 
         ))}
       </div>
 
-      <div className="mt-4 flex justify-center">
+      {/* <div className="mt-4 flex justify-center">
         <Button
           href="https://www.youtube.com/watch?v=kvB1bVTIfks"
           target="_blank"
@@ -40,7 +40,7 @@ export const SuggestionButtons = ({ chatStarted, onSuggestionClick, disabled }: 
         >
           <span>Tips for building with Chef</span>
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };

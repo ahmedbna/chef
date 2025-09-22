@@ -65,7 +65,7 @@ const HIGHLIGHTS: Highlight[] = [
     text: 'upload',
     tooltip: (
       <>
-        Chef will use Convex’s built-in{' '}
+        Chef will use Convex's built-in{' '}
         <TooltipLink href="https://docs.convex.dev/file-storage">file upload capabilities</TooltipLink>.
       </>
     ),
@@ -74,7 +74,7 @@ const HIGHLIGHTS: Highlight[] = [
     text: 'full text search',
     tooltip: (
       <>
-        Chef will use Convex’s built-in{' '}
+        Chef will use Convex's built-in{' '}
         <TooltipLink href="https://docs.convex.dev/search/text-search">full text search</TooltipLink> capabilities.
       </>
     ),
@@ -250,6 +250,17 @@ export const MessageInput = memo(function MessageInput({
     [input],
   );
 
+  // Show only sign-in button when user is not authenticated
+  if (chefAuthState.kind === 'unauthenticated') {
+    return (
+      <div className="relative z-20 mx-auto w-full max-w-chat">
+        <div className="flex justify-center">
+          <SignInButtonLarge />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative z-20 mx-auto w-full max-w-chat rounded-xl shadow transition-all duration-200">
       <div className="rounded-xl bg-background-primary/75 backdrop-blur-md">
@@ -293,7 +304,6 @@ export const MessageInput = memo(function MessageInput({
           {input.length > 3 && input.length <= PROMPT_LENGTH_WARNING_THRESHOLD && <NewLineShortcut />}
           {input.length > PROMPT_LENGTH_WARNING_THRESHOLD && <CharacterWarning />}
           <div className="ml-auto flex items-center gap-1">
-            {chefAuthState.kind === 'unauthenticated' && <SignInButton />}
             {chefAuthState.kind === 'fullyLoggedIn' && (
               <MenuComponent
                 buttonProps={{
@@ -357,13 +367,7 @@ export const MessageInput = memo(function MessageInput({
                 sendMessageInProgress ||
                 disabled
               }
-              tip={
-                chefAuthState.kind === 'unauthenticated'
-                  ? 'Please sign in to continue'
-                  : !selectedTeamSlug
-                    ? 'Please select a team to continue'
-                    : undefined
-              }
+              tip={!selectedTeamSlug ? 'Please select a team to continue' : undefined}
               onClick={handleClickButton}
               size="xs"
               className="ml-2 h-[1.625rem]"
@@ -418,7 +422,7 @@ const TextareaWithHighlights = memo(function TextareaWithHighlights({
 
   const blocks = useMemo(() => {
     const pattern = highlights
-      .map((h) => h.text) // we assume text doesn’t contain special characters
+      .map((h) => h.text) // we assume text doesn't contain special characters
       .join('|');
     const regex = new RegExp(pattern, 'gi');
 
@@ -621,6 +625,24 @@ const SignInButton = memo(function SignInButton() {
       <>
         <span>Sign in</span>
       </>
+    </Button>
+  );
+});
+
+const SignInButtonLarge = memo(function SignInButtonLarge() {
+  const { signIn } = useAuth();
+
+  return (
+    <Button
+      variant="neutral"
+      onClick={() => {
+        void signIn();
+      }}
+      size="lg"
+      className="px-8 py-4 text-base font-semibold rounded-full"
+      icon={<img className="size-6" src="/icons/Convex.svg" alt="Convex" />}
+    >
+      Sign in with Convex
     </Button>
   );
 });

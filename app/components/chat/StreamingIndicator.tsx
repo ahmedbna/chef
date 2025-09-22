@@ -305,11 +305,11 @@ function LittleUsage({
           <button className="hover:text-content-primary">
             <div className="flex flex-col items-end gap-1 text-sm text-content-secondary">
               <UsageDonut tokenUsage={loading ? null : { used, quota }} label={label} hidden={hideDonut} />
-              {needsMore && (
+              {/* {needsMore && (
                 <div className="border-b border-dotted border-content-secondary text-xs text-content-secondary hover:border-content-primary ">
                   Upgrade or refer a friend to get more tokens
                 </div>
-              )}
+              )} */}
             </div>
           </button>
         }

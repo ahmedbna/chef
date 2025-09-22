@@ -99,12 +99,9 @@ export const Messages = forwardRef<HTMLDivElement, MessagesProps>(function Messa
           return (
             <div
               key={index}
-              className={classNames(
-                'flex gap-4 p-4 w-full rounded-[calc(0.75rem-1px)] relative border border-neutral-200 dark:border-neutral-700',
-                {
-                  'bg-bolt-elements-messages-background': isUserMessage,
-                },
-              )}
+              className={classNames('flex gap-4 p-4 w-full rounded-[calc(0.75rem-1px)] relative', {
+                'bg-bolt-elements-messages-background': isUserMessage,
+              })}
             >
               {isUserMessage && (
                 <div className="flex size-[40px] shrink-0 items-center justify-center self-start overflow-hidden rounded-full bg-white text-gray-600 dark:bg-gray-800 dark:text-gray-500">

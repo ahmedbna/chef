@@ -16,6 +16,7 @@ export function useHomepageInitializeChat(chatId: string, setChatInitialized: (c
   const convex = useConvex();
   const { signIn } = useAuth();
   const chefAuthState = useChefAuth();
+
   const isFullyLoggedIn = chefAuthState.kind === 'fullyLoggedIn';
   return useCallback(async () => {
     if (!isFullyLoggedIn) {
