@@ -606,13 +606,17 @@ export const sendMessage = mutation({
 });
 \`\`\`
 
-Path: \`src/App.tsx\`
+Path: \`app/(tabs)/chat.tsx\`
 \`\`\`ts
 import { FormEvent, useRef, useState } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
+import { View } from "@/components/ui/view";
+import { Text } from "@/components/ui/text";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
-export default function App() {
+export default function ChatScreen() {
   const messages = useQuery(api.messages.list) || [];
 
   const [newMessageText, setNewMessageText] = useState("");
@@ -657,48 +661,29 @@ export default function App() {
   }
 
   return (
-    <main>
-      <h1>Convex Chat</h1>
-      <p className="badge">
-        <span>{name}</span>
-      </p>
-      <ul>
+    <View>
+      <Text variant="title">Convex Chat</Text>
+      <Text className="badge">{name}</Text>
+      <View>
         {messages.map((message) => (
-          <li key={message._id}>
-            <span>{message.author}:</span>
+          <View key={message._id}>
+            <Text>{message.author}:</Text>
             {message.format === "image" ? (
               <Image message={message} />
             ) : (
-              <span>{message.body}</span>
+              <Text>{message.body}</Text>
             )}
-            <span>{new Date(message._creationTime).toLocaleTimeString()}</span>
-          </li>
+            <Text>{new Date(message._creationTime).toLocaleTimeString()}</Text>
+          </View>
         ))}
-      </ul>
-      <form onSubmit={handleSendMessage}>
-        <input
+      </View>
+        <Input
           value={newMessageText}
           onChange={(event) => setNewMessageText(event.target.value)}
           placeholder="Write a message…"
         />
-        <input type="submit" value="Send" disabled={!newMessageText} />
-      </form>
-      <form onSubmit={handleSendImage}>
-        <input
-          type="file"
-          accept="image/*"
-          ref={imageInput}
-          onChange={(event) => setSelectedImage(event.target.files![0])}
-          className="ms-2 btn btn-primary"
-          disabled={selectedImage !== null}
-        />
-        <input
-          type="submit"
-          value="Send Image"
-          disabled={selectedImage === null}
-        />
-      </form>
-    </main>
+        <Button onPress={handleSendMessage} disabled={!newMessageText}>Send</Button>
+    </View>
   );
 }
 

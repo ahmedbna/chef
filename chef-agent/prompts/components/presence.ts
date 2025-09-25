@@ -104,14 +104,15 @@ A \`Presence\` React component can be instantiated from your client code like th
 import { api } from "../convex/_generated/api";
 import usePresence from "@convex-dev/presence/react";
 import FacePile from "@convex-dev/presence/facepile";
+import { View } fromn "@/components/ui/view";
 
 export default function App(): React.ReactElement {
   const userId = useQuery(api.presence.getUserId);
   
   return (
-    <main>
+    <View>
       {userId && <PresenceIndicator userId={userId} />}
-    </main>
+    </View>
   );
 }
 

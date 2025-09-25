@@ -2,19 +2,17 @@ import type { Tool } from 'ai';
 import { z } from 'zod';
 
 export const npmInstallToolDescription = `
-Install additional dependencies for the project with NPM.
-
-Choose high quality, flexible libraries that are well-maintained and have
-significant adoption. Always use libraries that have TypeScript definitions.
-`;
+  Install additional dependencies for the Expo React Native project with NPM.
+  
+  Choose Expo React Native compatible libraries. Prefer:
+  - Expo SDK modules when available
+  - React Native community packages
+  - Libraries with explicit React Native support
+  Always verify Expo compatibility before installation.
+  `;
 
 const packagesDescription = `
-Space separated list of NPM packages to install. This will be passed directly to \`npm install\`.
-
-Examples:
-- 'date-fns'
-- 'chart.js react-chartjs-2'
-- 'motion'
+  Space separated list of NPM packages to install. This will be passed directly to \`npx expo install\`.
 `;
 
 export const npmInstallToolParameters = z.object({

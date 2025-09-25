@@ -2,19 +2,23 @@ import type { Tool } from 'ai';
 import { z } from 'zod';
 
 export const deployToolDescription = `
-Deploy the app to Convex and start the Vite development server (if not already running).
+  Deploy the app to Convex and start the Expo development server.
+  
+  Execute this tool call after you've used an artifact to write files to the filesystem
+  and the app is complete. Do NOT execute this tool if the app isn't in a working state.
+  
+  After initially writing the app, you MUST execute this tool after making any changes
+  to the filesystem.
 
-Execute this tool call after you've used an artifact to write files to the filesystem
-and the app is complete. Do NOT execute this tool if the app isn't in a working state.
-
-After initially writing the app, you MUST execute this tool after making any changes
-to the filesystem.
-
-If this tool call fails with esbuild bundler errors, a library that requires Node.js
-APIs may be being used. Isolating those dependencies into a convex file of only actions
-with "use node" at the top is the only way to fix this. The files with "use node" at the
-top can only contain actions. They can NEVER contains queries or mutations.
-`;
+  Execute this tool after writing React Native components and the app is complete.
+  Use 'npx expo start'for development.
+  
+  If bundling fails, ensure all imports are React Native compatible.
+  If this tool call fails with esbuild bundler errors, a library that requires Node.js
+  APIs may be being used. Isolating those dependencies into a convex file of only actions
+  with "use node" at the top is the only way to fix this. The files with "use node" at the
+  top can only contain actions. They can NEVER contains queries or mutations.
+  `;
 
 export const deployTool: Tool = {
   description: deployToolDescription,
