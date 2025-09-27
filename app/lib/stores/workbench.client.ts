@@ -1,9 +1,9 @@
 import { atom, map, type ReadableAtom, type WritableAtom } from 'nanostores';
 import type { EditorDocument, ScrollPosition } from 'chef-agent/types';
-import { ActionRunner } from '~/lib/runtime/action-runner';
+import { ActionRunner } from '@/lib/runtime/action-runner';
 import type { ActionCallbackData, ArtifactCallbackData } from 'chef-agent/message-parser';
-import { webcontainer } from '~/lib/webcontainer';
-import type { ITerminal, TerminalInitializationOptions } from '~/types/terminal';
+import { webcontainer } from '@/lib/webcontainer';
+import type { ITerminal, TerminalInitializationOptions } from '@/types/terminal';
 import { unreachable } from 'chef-agent/utils/unreachable';
 import { EditorStore } from './editor';
 import { FilesStore } from './files';
@@ -16,18 +16,18 @@ import JSZip from 'jszip';
 import fileSaver from 'file-saver';
 import { path } from 'chef-agent/utils/path';
 import { description } from './description';
-import { createSampler } from '~/utils/sampler';
-import type { ActionAlert } from '~/types/actions';
+import { createSampler } from '@/utils/sampler';
+import type { ActionAlert } from '@/types/actions';
 import type { WebContainer } from '@webcontainer/api';
-import { withResolvers } from '~/utils/promises';
+import { withResolvers } from '@/utils/promises';
 import type { Artifacts } from './artifacts';
 import { WORK_DIR } from 'chef-agent/constants';
 import { parsePartId, type PartId, type MessageId } from 'chef-agent/partId.js';
-import { generateReadmeContent } from '~/lib/download/readmeContent';
-import { setupMjsContent } from '~/lib/download/setupMjsContent';
+import { generateReadmeContent } from '@/lib/download/readmeContent';
+import { setupMjsContent } from '@/lib/download/setupMjsContent';
 import type { ConvexProject } from 'chef-agent/types';
-import { cursorRulesContent } from '~/lib/download/cursorRulesContent';
-import type { ConvexToolName } from '~/lib/common/types';
+import { cursorRulesContent } from '@/lib/download/cursorRulesContent';
+import type { ConvexToolName } from '@/lib/common/types';
 
 const { saveAs } = fileSaver;
 

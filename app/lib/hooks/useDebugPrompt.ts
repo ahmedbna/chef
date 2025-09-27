@@ -2,10 +2,10 @@ import { useConvex, useMutation, useQuery } from 'convex/react';
 import { useQueries as useReactQueries } from '@tanstack/react-query';
 import { api } from '@convex/_generated/api';
 import type { CoreMessage } from 'ai';
-import { decompressWithLz4 } from '~/lib/compression.client';
-import { queryClientStore } from '~/lib/stores/reactQueryClient';
+import { decompressWithLz4 } from '@/lib/compression.client';
+import { queryClientStore } from '@/lib/stores/reactQueryClient';
 import { useEffect, useState } from 'react';
-import { getConvexAuthToken } from '~/lib/stores/sessionId';
+import { getConvexAuthToken } from '@/lib/stores/sessionId';
 
 async function fetchPromptData(url: string): Promise<CoreMessage[]> {
   const response = await fetch(url);

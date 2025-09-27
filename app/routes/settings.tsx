@@ -1,8 +1,8 @@
-import { useTeamsInitializer } from '~/lib/stores/startup/useTeamsInitializer';
-import { ChefAuthProvider } from '~/components/chat/ChefAuthWrapper';
+import { useTeamsInitializer } from '@/lib/stores/startup/useTeamsInitializer';
+import { ChefAuthProvider } from '@/components/chat/ChefAuthWrapper';
 import { json } from '@vercel/remix';
 import type { LoaderFunctionArgs, MetaFunction } from '@vercel/remix';
-import { SettingsContent } from '~/components/SettingsContent.client';
+import { SettingsContent } from '@/components/SettingsContent.client';
 import { ClientOnly } from 'remix-utils/client-only';
 
 export const meta: MetaFunction = () => {

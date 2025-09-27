@@ -2,9 +2,9 @@ import type { Message } from 'ai';
 import { useEffect, useState } from 'react';
 import { makePartId } from 'chef-agent/partId';
 import { toast } from 'sonner';
-import { workbenchStore } from '~/lib/stores/workbench.client';
-import { messageParser, processMessage, type PartCache } from '~/lib/hooks/useMessageParser';
-import { subchatIndexStore } from '~/lib/stores/subchats';
+import { workbenchStore } from '@/lib/stores/workbench.client';
+import { messageParser, processMessage, type PartCache } from '@/lib/hooks/useMessageParser';
+import { subchatIndexStore } from '@/lib/stores/subchats';
 import { useStore } from '@nanostores/react';
 
 export type ReloadedMessages = {

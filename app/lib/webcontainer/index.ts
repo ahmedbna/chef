@@ -1,10 +1,10 @@
 import { WebContainer } from '@webcontainer/api';
 import { WORK_DIR_NAME } from 'chef-agent/constants';
-import { cleanStackTrace } from '~/utils/stacktrace';
+import { cleanStackTrace } from '@/utils/stacktrace';
 import { createScopedLogger } from 'chef-agent/utils/logger';
-import { setContainerBootState, ContainerBootState } from '~/lib/stores/containerBootState';
-import { workbenchStore } from '~/lib/stores/workbench.client';
-import { chooseExperience } from '~/utils/experienceChooser';
+import { setContainerBootState, ContainerBootState } from '@/lib/stores/containerBootState';
+import { workbenchStore } from '@/lib/stores/workbench.client';
+import { chooseExperience } from '@/utils/experienceChooser';
 
 interface WebContainerContext {
   loaded: boolean;

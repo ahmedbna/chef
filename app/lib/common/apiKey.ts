@@ -1,5 +1,5 @@
 import type { Doc } from '@convex/_generated/dataModel';
-import { type ModelSelection } from '~/utils/constants';
+import { type ModelSelection } from '@/utils/constants';
 
 export function hasApiKeySet(
   modelSelection: ModelSelection,

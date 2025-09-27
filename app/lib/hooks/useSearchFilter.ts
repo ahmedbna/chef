@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
-import type { ChatHistoryItem } from '~/types/ChatHistoryItem';
+import type { ChatHistoryItem } from '@/types/ChatHistoryItem';
 import { useDebounce } from '@uidotdev/usehooks';
 
 interface UseSearchFilterOptions {

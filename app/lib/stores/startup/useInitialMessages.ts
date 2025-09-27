@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useConvex } from 'convex/react';
-import { waitForConvexSessionId } from '~/lib/stores/sessionId';
+import { waitForConvexSessionId } from '@/lib/stores/sessionId';
 import { api } from '@convex/_generated/api';
 import type { SerializedMessage } from '@convex/messages';
 import type { Message } from '@ai-sdk/react';
-import { setKnownUrlId } from '~/lib/stores/chatId';
-import { setKnownInitialId } from '~/lib/stores/chatId';
-import { description } from '~/lib/stores/description';
+import { setKnownUrlId } from '@/lib/stores/chatId';
+import { setKnownInitialId } from '@/lib/stores/chatId';
+import { description } from '@/lib/stores/description';
 import { toast } from 'sonner';
 import * as lz4 from 'lz4-wasm';
-import { getConvexSiteUrl } from '~/lib/convexSiteUrl';
-import { subchatIndexStore } from '~/lib/stores/subchats';
+import { getConvexSiteUrl } from '@/lib/convexSiteUrl';
+import { subchatIndexStore } from '@/lib/stores/subchats';
 import { useStore } from '@nanostores/react';
 
 export interface InitialMessages {

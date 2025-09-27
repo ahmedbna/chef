@@ -1,8 +1,8 @@
 import { map, computed, onMount } from 'nanostores';
 import { useStore } from '@nanostores/react';
 import { useConvex } from 'convex/react';
-import { convexAuthTokenStore, getConvexAuthToken } from '~/lib/stores/sessionId';
-import { VITE_PROVISION_HOST } from '~/lib/convexProvisionHost';
+import { convexAuthTokenStore, getConvexAuthToken } from '@/lib/stores/sessionId';
+import { VITE_PROVISION_HOST } from '@/lib/convexProvisionHost';
 import { debugOverrideStore, debugOverrideEnabledStore } from './debug';
 import { queryClientStore } from './reactQueryClient';
 import { QueryObserver } from '@tanstack/react-query';

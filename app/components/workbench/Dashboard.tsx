@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react';
 import { memo, useEffect, useRef } from 'react';
-import { convexProjectStore } from '~/lib/stores/convexProject';
-import { dashboardPathStore } from '~/lib/stores/dashboardPath';
+import { convexProjectStore } from '@/lib/stores/convexProject';
+import { dashboardPathStore } from '@/lib/stores/dashboardPath';
 import { ExternalLinkIcon } from '@radix-ui/react-icons';
 import { Button } from '@ui/Button';
 

@@ -1,7 +1,7 @@
 import type { WebContainer, WebContainerProcess } from '@webcontainer/api';
-import type { ITerminal } from '~/types/terminal';
+import type { ITerminal } from '@/types/terminal';
 import { withResolvers } from './promises';
-import { ContainerBootState, waitForContainerBootState } from '~/lib/stores/containerBootState';
+import { ContainerBootState, waitForContainerBootState } from '@/lib/stores/containerBootState';
 import { cleanTerminalOutput } from 'chef-agent/utils/shell';
 
 export async function newShellProcess(webcontainer: WebContainer, terminal: ITerminal) {

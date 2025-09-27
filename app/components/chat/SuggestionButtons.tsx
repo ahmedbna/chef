@@ -1,6 +1,6 @@
-import { Button } from '@ui/Button';
 import { ArrowUpIcon, VideoIcon } from '@radix-ui/react-icons';
 import { SUGGESTIONS } from 'chef-agent/constants';
+import { Button } from '../ui/button';
 
 interface SuggestionButtonsProps {
   chatStarted: boolean;
@@ -20,10 +20,10 @@ export const SuggestionButtons = ({ chatStarted, onSuggestionClick, disabled }: 
           <Button
             key={suggestion.title}
             onClick={() => onSuggestionClick?.(suggestion.prompt)}
-            className="rounded-full px-3 shadow-sm"
-            variant="neutral"
+            className="rounded-full px-3"
+            variant="destructive"
             disabled={disabled}
-            icon={<ArrowUpIcon className="size-4" />}
+            // icon={<ArrowUpIcon className="size-4" />}
           >
             {suggestion.title}
           </Button>

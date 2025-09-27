@@ -1,8 +1,8 @@
 import { useQuery as useReactQuery } from '@tanstack/react-query';
 import { useAuthToken } from './useDebugPrompt';
-import { VITE_PROVISION_HOST } from '~/lib/convexProvisionHost';
-import { useSelectedTeam } from '~/lib/stores/convexTeams';
-import { queryClientStore } from '~/lib/stores/reactQueryClient';
+import { VITE_PROVISION_HOST } from '@/lib/convexProvisionHost';
+import { useSelectedTeam } from '@/lib/stores/convexTeams';
+import { queryClientStore } from '@/lib/stores/reactQueryClient';
 
 export function useReferralCode() {
   const team = useSelectedTeam();

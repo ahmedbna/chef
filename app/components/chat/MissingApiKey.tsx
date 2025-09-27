@@ -10,7 +10,7 @@ import { type ModelProvider, displayModelProviderName } from './ModelSelector';
 import { KeyIcon } from '@heroicons/react/24/outline';
 import type { Doc } from '@convex/_generated/dataModel';
 import { ConfirmationDialog } from '@ui/ConfirmationDialog';
-import { useLaunchDarkly } from '~/lib/hooks/useLaunchDarkly';
+import { useLaunchDarkly } from '@/lib/hooks/useLaunchDarkly';
 
 export interface MissingApiKeyProps {
   provider: ModelProvider;

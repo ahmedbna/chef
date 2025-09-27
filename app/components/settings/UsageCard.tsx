@@ -1,14 +1,14 @@
 import { useStore } from '@nanostores/react';
 import { useEffect, useState } from 'react';
-import { getStoredTeamSlug } from '~/lib/stores/convexTeams';
-import { convexTeamsStore } from '~/lib/stores/convexTeams';
-import { TeamSelector } from '~/components/convex/TeamSelector';
+import { getStoredTeamSlug } from '@/lib/stores/convexTeams';
+import { convexTeamsStore } from '@/lib/stores/convexTeams';
+import { TeamSelector } from '@/components/convex/TeamSelector';
 import { Callout } from '@ui/Callout';
 import { ExternalLinkIcon } from '@radix-ui/react-icons';
 import { Button } from '@ui/Button';
 import { ProgressBar } from '@ui/ProgressBar';
-import { useUsage } from '~/lib/stores/usage';
-import { renderTokenCount } from '~/lib/convexUsage';
+import { useUsage } from '@/lib/stores/usage';
+import { renderTokenCount } from '@/lib/convexUsage';
 
 export function UsageCard() {
   const teams = useStore(convexTeamsStore);

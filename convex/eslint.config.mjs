@@ -53,7 +53,7 @@ export default [
           patterns: [
             {
               group: ["../"],
-              message: "Relative imports are not allowed. Please use '~/' instead.",
+              message: "Relative imports are not allowed. Please use '@/' instead.",
             },
           ],
         },

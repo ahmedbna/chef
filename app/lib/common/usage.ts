@@ -1,5 +1,5 @@
 import type { LanguageModelUsage, Message, ProviderMetadata } from 'ai';
-import { type ProviderType, type Usage, type UsageAnnotation, parseAnnotations } from '~/lib/common/annotations';
+import { type ProviderType, type Usage, type UsageAnnotation, parseAnnotations } from '@/lib/common/annotations';
 import { captureMessage } from '@sentry/remix';
 
 export function usageFromGeneration(generation: {

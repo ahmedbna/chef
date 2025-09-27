@@ -2,7 +2,7 @@ import type { LoaderFunctionArgs, MetaFunction } from '@vercel/remix';
 import { redirect } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { useLoaderData } from '@remix-run/react';
-import { Show } from '~/components/Show';
+import { Show } from '@/components/Show';
 import { api } from '@convex/_generated/api';
 import { preloadedQueryResult, preloadQuery } from 'convex/nextjs';
 import type { Preloaded } from 'convex/react';

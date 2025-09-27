@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 import { encodeUsageAnnotation } from './usage';
-import { annotationValidator, usageAnnotationValidator } from '~/lib/common/annotations';
+import { annotationValidator, usageAnnotationValidator } from '@/lib/common/annotations';
 
 test('encodeUsageAnnotationAnthropic', async () => {
   const usage = {

@@ -1,12 +1,12 @@
 import type { Message } from 'ai';
 import { useConvex, useQuery, type ConvexReactClient } from 'convex/react';
-import { useConvexSessionIdOrNullOrLoading, waitForConvexSessionId } from '~/lib/stores/sessionId';
-import { getFileUpdateCounter, waitForFileUpdateCounterChanged } from '~/lib/stores/fileUpdateCounter';
-import { buildUncompressedSnapshot } from '~/lib/snapshot.client';
+import { useConvexSessionIdOrNullOrLoading, waitForConvexSessionId } from '@/lib/stores/sessionId';
+import { getFileUpdateCounter, waitForFileUpdateCounterChanged } from '@/lib/stores/fileUpdateCounter';
+import { buildUncompressedSnapshot } from '@/lib/snapshot.client';
 import type { Id } from '@convex/_generated/dataModel';
-import { backoffTime } from '~/utils/constants';
+import { backoffTime } from '@/utils/constants';
 import { useEffect } from 'react';
-import { compressWithLz4 } from '~/lib/compression';
+import { compressWithLz4 } from '@/lib/compression';
 import {
   handleUrlHintAndDescription,
   lastCompleteMessageInfoStore,
@@ -15,9 +15,9 @@ import {
 } from './messages';
 import { createScopedLogger } from 'chef-agent/utils/logger';
 import { useStore } from '@nanostores/react';
-import { subchatIndexStore, waitForSubchatIndexChanged } from '~/lib/stores/subchats';
+import { subchatIndexStore, waitForSubchatIndexChanged } from '@/lib/stores/subchats';
 import { api } from '@convex/_generated/api';
-import { workbenchStore } from '~/lib/stores/workbench.client';
+import { workbenchStore } from '@/lib/stores/workbench.client';
 import { chatSyncState, type BackupSyncState, type InitialBackupSyncState } from './chatSyncState';
 import { toast } from 'sonner';
 

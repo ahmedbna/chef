@@ -1,13 +1,13 @@
-import { selectedTeamSlugStore, waitForSelectedTeamSlug } from '~/lib/stores/convexTeams';
+import { selectedTeamSlugStore, waitForSelectedTeamSlug } from '@/lib/stores/convexTeams';
 
 import { useConvex } from 'convex/react';
-import { getConvexAuthToken, waitForConvexSessionId } from '~/lib/stores/sessionId';
+import { getConvexAuthToken, waitForConvexSessionId } from '@/lib/stores/sessionId';
 import { useCallback } from 'react';
 import { api } from '@convex/_generated/api';
-import { useChefAuth } from '~/components/chat/ChefAuthWrapper';
-import { ContainerBootState, waitForBootStepCompleted } from '~/lib/stores/containerBootState';
+import { useChefAuth } from '@/components/chat/ChefAuthWrapper';
+import { ContainerBootState, waitForBootStepCompleted } from '@/lib/stores/containerBootState';
 import { toast } from 'sonner';
-import { waitForConvexProjectConnection } from '~/lib/stores/convexProject';
+import { waitForConvexProjectConnection } from '@/lib/stores/convexProject';
 import { useAuth } from '@workos-inc/authkit-react';
 
 const CREATE_PROJECT_TIMEOUT = 15000;

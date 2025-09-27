@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 import { useStore } from '@nanostores/react';
 import { EnhancePromptButton } from './EnhancePromptButton.client';
-import { messageInputStore } from '~/lib/stores/messageInput';
+import { messageInputStore } from '@/lib/stores/messageInput';
 import React, {
   memo,
   useCallback,
@@ -15,22 +15,22 @@ import React, {
   type KeyboardEventHandler,
 } from 'react';
 import { useSearchParams } from '@remix-run/react';
-import { classNames } from '~/utils/classNames';
-import { ConvexConnection } from '~/components/convex/ConvexConnection';
-import { PROMPT_COOKIE_KEY, type ModelSelection } from '~/utils/constants';
+import { classNames } from '@/utils/classNames';
+import { ConvexConnection } from '@/components/convex/ConvexConnection';
+import { PROMPT_COOKIE_KEY, type ModelSelection } from '@/utils/constants';
 import { ModelSelector } from './ModelSelector';
-import { TeamSelector } from '~/components/convex/TeamSelector';
+import { TeamSelector } from '@/components/convex/TeamSelector';
 import { ArrowRightIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, StopIcon } from '@radix-ui/react-icons';
 import { SquaresPlusIcon } from '@heroicons/react/24/outline';
 import { Tooltip } from '@ui/Tooltip';
-import { setSelectedTeamSlug, useSelectedTeamSlug } from '~/lib/stores/convexTeams';
-import { convexProjectStore } from '~/lib/stores/convexProject';
+import { setSelectedTeamSlug, useSelectedTeamSlug } from '@/lib/stores/convexTeams';
+import { convexProjectStore } from '@/lib/stores/convexProject';
 import { useChefAuth } from './ChefAuthWrapper';
-import { getConvexAuthToken, useConvexSessionIdOrNullOrLoading } from '~/lib/stores/sessionId';
+import { getConvexAuthToken, useConvexSessionIdOrNullOrLoading } from '@/lib/stores/sessionId';
 import { KeyboardShortcut } from '@ui/KeyboardShortcut';
 import { Button } from '@ui/Button';
 import { Spinner } from '@ui/Spinner';
-import { debounce } from '~/utils/debounce';
+import { debounce } from '@/utils/debounce';
 import { toast } from 'sonner';
 import { captureException } from '@sentry/remix';
 import { Menu as MenuComponent, MenuItem as MenuItemComponent } from '@ui/Menu';

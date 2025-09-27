@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { setExtra, setUser } from '@sentry/remix';
 import { useConvex } from 'convex/react';
-import { useConvexSessionIdOrNullOrLoading, getConvexAuthToken } from '~/lib/stores/sessionId';
-import { useChatId } from '~/lib/stores/chatId';
-import { setProfile } from '~/lib/stores/profile';
-import { getConvexProfile } from '~/lib/convexProfile';
+import { useConvexSessionIdOrNullOrLoading, getConvexAuthToken } from '@/lib/stores/sessionId';
+import { useChatId } from '@/lib/stores/chatId';
+import { setProfile } from '@/lib/stores/profile';
+import { getConvexProfile } from '@/lib/convexProfile';
 import { useLDClient, withLDProvider, basicLogger } from 'launchdarkly-react-client-sdk';
 import { api } from '@convex/_generated/api';
 import { useAuth } from '@workos-inc/authkit-react';

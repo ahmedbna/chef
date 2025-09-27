@@ -1,13 +1,13 @@
-import { useTeamsInitializer } from '~/lib/stores/startup/useTeamsInitializer';
-import { ChefAuthProvider } from '~/components/chat/ChefAuthWrapper';
+import { useTeamsInitializer } from '@/lib/stores/startup/useTeamsInitializer';
+import { ChefAuthProvider } from '@/components/chat/ChefAuthWrapper';
 import type { MetaFunction } from '@vercel/remix';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
 import { useState, useEffect } from 'react';
-import { useIsAdmin } from '~/lib/hooks/useDebugPrompt';
+import { useIsAdmin } from '@/lib/hooks/useDebugPrompt';
 import { useSearchParams } from '@remix-run/react';
 import { ClientOnly } from 'remix-utils/client-only';
-import { UsageBreakdownView } from '~/components/debug/UsageBreakdownView';
-import { getConvexSiteUrl } from '~/lib/convexSiteUrl';
+import { UsageBreakdownView } from '@/components/debug/UsageBreakdownView';
+import { getConvexSiteUrl } from '@/lib/convexSiteUrl';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Prompt Debug | Chef Admin' }];

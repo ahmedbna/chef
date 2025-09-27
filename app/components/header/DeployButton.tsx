@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import JSZip from 'jszip';
-import { webcontainer } from '~/lib/webcontainer';
+import { webcontainer } from '@/lib/webcontainer';
 import type { WebContainer } from '@webcontainer/api';
 import { useStore } from '@nanostores/react';
-import { convexProjectStore } from '~/lib/stores/convexProject';
-import { getFileUpdateCounter, useFileUpdateCounter } from '~/lib/stores/fileUpdateCounter';
+import { convexProjectStore } from '@/lib/stores/convexProject';
+import { getFileUpdateCounter, useFileUpdateCounter } from '@/lib/stores/fileUpdateCounter';
 import { toast } from 'sonner';
-import { streamOutput } from '~/utils/process';
+import { streamOutput } from '@/utils/process';
 import { Spinner } from '@ui/Spinner';
 import { CheckIcon, ExternalLinkIcon, RocketIcon, UpdateIcon } from '@radix-ui/react-icons';
 import { Button } from '@ui/Button';
 import { useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
-import { useChatId } from '~/lib/stores/chatId';
-import { useConvexSessionId } from '~/lib/stores/sessionId';
+import { useChatId } from '@/lib/stores/chatId';
+import { useConvexSessionId } from '@/lib/stores/sessionId';
 
 interface ErrorResponse {
   error: string;

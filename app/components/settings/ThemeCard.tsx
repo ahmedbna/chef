@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react';
 import { Button } from '@ui/Button';
-import { toggleTheme } from '~/lib/stores/theme';
-import { themeStore } from '~/lib/stores/theme';
+import { toggleTheme } from '@/lib/stores/theme';
+import { themeStore } from '@/lib/stores/theme';
 
 export function ThemeCard() {
   const theme = useStore(themeStore);

@@ -16,7 +16,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"],
+      "@/*": ["./app/*"],
       "@convex/*": ["./convex/*"],
       "@ui/*": ["./node_modules/@convex-dev/design-system/dist/*"]
     },

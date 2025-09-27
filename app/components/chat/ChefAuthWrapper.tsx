@@ -3,14 +3,14 @@ import { useConvex } from 'convex/react';
 import { useConvexAuth } from 'convex/react';
 import { createContext, useContext, useEffect, useRef } from 'react';
 
-import { sessionIdStore } from '~/lib/stores/sessionId';
+import { sessionIdStore } from '@/lib/stores/sessionId';
 
-import { useConvexSessionIdOrNullOrLoading } from '~/lib/stores/sessionId';
+import { useConvexSessionIdOrNullOrLoading } from '@/lib/stores/sessionId';
 import type { Id } from '@convex/_generated/dataModel';
 import { useLocalStorage } from '@uidotdev/usehooks';
 import { api } from '@convex/_generated/api';
 import { toast } from 'sonner';
-import { fetchOptIns } from '~/lib/convexOptins';
+import { fetchOptIns } from '@/lib/convexOptins';
 import { setChefDebugProperty } from 'chef-agent/utils/chefDebug';
 import { useAuth } from '@workos-inc/authkit-react';
 type ChefAuthState =

@@ -8,11 +8,11 @@ import { createOpenAI } from '@ai-sdk/openai';
 import { awsCredentialsProvider } from '@vercel/functions/oidc';
 import { captureException } from '@sentry/remix';
 import { logger } from 'chef-agent/utils/logger';
-import type { ProviderType } from '~/lib/common/annotations';
-import { getEnv } from '~/lib/.server/env';
+import type { ProviderType } from '@/lib/common/annotations';
+import { getEnv } from '@/lib/.server/env';
 // workaround for Vercel environment from
 // https://github.com/vercel/ai/issues/199#issuecomment-1605245593
-import { fetch } from '~/lib/.server/fetch';
+import { fetch } from '@/lib/.server/fetch';
 
 const ALLOWED_AWS_REGIONS = ['us-east-1', 'us-west-2'];
 

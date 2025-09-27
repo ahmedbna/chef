@@ -1,9 +1,9 @@
-import { setSelectedTeamSlug } from '~/lib/stores/convexTeams';
-import { convexProjectStore } from '~/lib/stores/convexProject';
+import { setSelectedTeamSlug } from '@/lib/stores/convexTeams';
+import { convexProjectStore } from '@/lib/stores/convexProject';
 
 import { useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
-import { useConvexSessionIdOrNullOrLoading } from '~/lib/stores/sessionId';
+import { useConvexSessionIdOrNullOrLoading } from '@/lib/stores/sessionId';
 import { useEffect } from 'react';
 import { toast } from 'sonner';
 

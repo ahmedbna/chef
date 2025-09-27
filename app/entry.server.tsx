@@ -9,7 +9,7 @@ import { renderToReadableStream as renderToReadableStreamSSR } from 'react-dom/s
 import { renderHeadToString } from 'remix-island';
 const renderToReadableStream = renderToReadableStreamSSR as typeof RenderToReadableStream;
 import { Head } from './root';
-import { themeStore } from '~/lib/stores/theme';
+import { themeStore } from './lib/stores/theme';
 
 const enableSentry =
   globalThis.process.env.VERCEL_ENV === 'production' || globalThis.process.env.VERCEL_GIT_COMMIT_REF === 'staging';
@@ -35,7 +35,7 @@ export default async function handleRequest(
   // Share page can stretch more that h-full.
   const widthFullHeightFull = !new URL(request.url).pathname.startsWith('/share/');
 
-  const readable = await renderToReadableStream(<RemixServer context={remixContext} url={request.url} />, {
+  const readable = await renderToReadableStream(<RemixServer context={remixContext as any} url={request.url} />, {
     // TODO we ought to abort, say by timeout, but it looked involved:
     // see https://github.com/vercel/next.js/issues/56919
     // and https://github.com/remix-run/remix/issues/10014

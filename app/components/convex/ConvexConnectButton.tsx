@@ -1,8 +1,8 @@
-import { getConvexAuthToken, useConvexSessionId } from '~/lib/stores/sessionId';
-import { setSelectedTeamSlug, useSelectedTeamSlug } from '~/lib/stores/convexTeams';
+import { getConvexAuthToken, useConvexSessionId } from '@/lib/stores/sessionId';
+import { setSelectedTeamSlug, useSelectedTeamSlug } from '@/lib/stores/convexTeams';
 import { useConvex, useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
-import { useChatId } from '~/lib/stores/chatId';
+import { useChatId } from '@/lib/stores/chatId';
 import { TeamSelector } from './TeamSelector';
 import { Link1Icon } from '@radix-ui/react-icons';
 import { Button } from '@ui/Button';

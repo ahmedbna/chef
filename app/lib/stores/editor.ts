@@ -2,7 +2,7 @@ import { atom, computed, map, type MapStore, type WritableAtom } from 'nanostore
 import type { EditorDocument, ScrollPosition } from 'chef-agent/types';
 import type { AbsolutePath } from 'chef-agent/utils/workDir';
 import type { FileMap } from 'chef-agent/types';
-import type { FilesStore } from '~/lib/stores/files';
+import type { FilesStore } from '@/lib/stores/files';
 
 type EditorDocuments = Record<string, EditorDocument>;
 

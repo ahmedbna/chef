@@ -1,8 +1,8 @@
 import type { ActionFunctionArgs } from '@vercel/remix';
 import OpenAI from 'openai';
-import { getEnv } from '~/lib/.server/env';
-import { checkTokenUsage } from '~/lib/.server/usage';
-import { disabledText } from '~/lib/convexUsage';
+import { getEnv } from '@/lib/.server/env';
+import { checkTokenUsage } from '@/lib/.server/usage';
+import { disabledText } from '@/lib/convexUsage';
 
 const SYSTEM_PROMPT = `You are an expert prompt engineer. Your task is to enhance and improve user prompts to make them more effective, concise, clear, and focused.
 

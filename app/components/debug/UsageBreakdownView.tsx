@@ -7,17 +7,17 @@ import { JsonView } from 'react-json-view-lite';
 import 'react-json-view-lite/dist/index.css';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, type ChartOptions } from 'chart.js';
-import { parseAnnotations, type ProviderType, type Usage, type UsageAnnotation } from '~/lib/common/annotations';
+import { parseAnnotations, type ProviderType, type Usage, type UsageAnnotation } from '@/lib/common/annotations';
 import {
   calculateChefTokens,
   getFailedToolCalls,
   calculateTotalUsage,
   initializeUsage,
   usageFromGeneration,
-} from '~/lib/common/usage';
-import { decompressWithLz4 } from '~/lib/compression.client';
+} from '@/lib/common/usage';
+import { decompressWithLz4 } from '@/lib/compression.client';
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import { getConvexAuthToken } from '~/lib/stores/sessionId';
+import { getConvexAuthToken } from '@/lib/stores/sessionId';
 import { useConvex } from 'convex/react';
 import { setChefDebugProperty } from 'chef-agent/utils/chefDebug';
 // Register Chart.js components - needs to include ALL required elements

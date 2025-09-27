@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { convexTeamsStore, type ConvexTeam } from '~/lib/stores/convexTeams';
-import { getConvexAuthToken, waitForConvexSessionId } from '~/lib/stores/sessionId';
-import { getStoredTeamSlug, setSelectedTeamSlug } from '~/lib/stores/convexTeams';
+import { convexTeamsStore, type ConvexTeam } from '@/lib/stores/convexTeams';
+import { getConvexAuthToken, waitForConvexSessionId } from '@/lib/stores/sessionId';
+import { getStoredTeamSlug, setSelectedTeamSlug } from '@/lib/stores/convexTeams';
 import { toast } from 'sonner';
 import type { ConvexReactClient } from 'convex/react';
 import { useConvex } from 'convex/react';
-import { VITE_PROVISION_HOST } from '~/lib/convexProvisionHost';
+import { VITE_PROVISION_HOST } from '@/lib/convexProvisionHost';
 
 export function useTeamsInitializer() {
   const convex = useConvex();

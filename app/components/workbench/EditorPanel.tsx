@@ -7,21 +7,21 @@ import {
   type OnSaveCallback as OnEditorSave,
   type OnScrollCallback as OnEditorScroll,
   type OnWheelCallback as OnEditorWheel,
-} from '~/components/editor/codemirror/CodeMirrorEditor';
+} from '@/components/editor/codemirror/CodeMirrorEditor';
 import type { EditorDocument } from 'chef-agent/types';
-import { PanelHeader } from '~/components/ui/PanelHeader';
-import { PanelHeaderButton } from '~/components/ui/PanelHeaderButton';
+import { PanelHeader } from '@/components/ui/PanelHeader';
+import { PanelHeaderButton } from '@/components/ui/PanelHeaderButton';
 import type { FileMap } from 'chef-agent/types';
-import type { FileHistory } from '~/types/actions';
-import { themeStore } from '~/lib/stores/theme';
+import type { FileHistory } from '@/types/actions';
+import { themeStore } from '@/lib/stores/theme';
 import { WORK_DIR } from 'chef-agent/constants';
 import { renderLogger } from 'chef-agent/utils/logger';
-import { isMobile } from '~/utils/mobile';
+import { isMobile } from '@/utils/mobile';
 import { FileBreadcrumb } from './FileBreadcrumb';
 import { FileTree } from './FileTree';
 import { DEFAULT_TERMINAL_SIZE, TerminalTabs } from './terminal/TerminalTabs';
-import { workbenchStore } from '~/lib/stores/workbench.client';
-import type { TerminalInitializationOptions } from '~/types/terminal';
+import { workbenchStore } from '@/lib/stores/workbench.client';
+import type { TerminalInitializationOptions } from '@/types/terminal';
 import { CheckIcon, ResetIcon } from '@radix-ui/react-icons';
 
 interface EditorPanelProps {

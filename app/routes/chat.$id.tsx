@@ -1,8 +1,8 @@
 import type { LoaderFunctionArgs, MetaFunction } from '@vercel/remix';
 import { json } from '@vercel/remix';
 import { ClientOnly } from 'remix-utils/client-only';
-import { Header } from '~/components/header/Header';
-import { ExistingChat } from '~/components/ExistingChat.client';
+import { Header } from '@/components/header/Header';
+import { ExistingChat } from '@/components/ExistingChat.client';
 import { redirect, useLoaderData } from '@remix-run/react';
 
 export const meta: MetaFunction = () => {

@@ -1,28 +1,28 @@
 import { memo, useCallback, useState } from 'react';
 import { toast } from 'sonner';
 import { ConfirmationDialog } from '@ui/ConfirmationDialog';
-import { type ChatHistoryItem } from '~/types/ChatHistoryItem';
+import { type ChatHistoryItem } from '@/types/ChatHistoryItem';
 import { logger } from 'chef-agent/utils/logger';
 import { Menu as MenuComponent, MenuItem as MenuItemComponent } from '@ui/Menu';
-import { useSearchFilter } from '~/lib/hooks/useSearchFilter';
-import { classNames } from '~/utils/classNames';
+import { useSearchFilter } from '@/lib/hooks/useSearchFilter';
+import { classNames } from '@/utils/classNames';
 import { useConvex, useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
-import { getConvexAuthToken, useConvexSessionIdOrNullOrLoading } from '~/lib/stores/sessionId';
-import { getKnownInitialId } from '~/lib/stores/chatId';
+import { getConvexAuthToken, useConvexSessionIdOrNullOrLoading } from '@/lib/stores/sessionId';
+import { getKnownInitialId } from '@/lib/stores/chatId';
 import { Button } from '@ui/Button';
 import { TextInput } from '@ui/TextInput';
 import { Checkbox } from '@ui/Checkbox';
 import { PlusIcon } from '@radix-ui/react-icons';
 import { binDates } from '../sidebar/date-binning';
 import { HistoryItem } from '../sidebar/HistoryItem';
-import { profileStore, setProfile } from '~/lib/stores/profile';
+import { profileStore, setProfile } from '@/lib/stores/profile';
 import { useStore } from '@nanostores/react';
 import { PersonIcon, GearIcon, ExitIcon } from '@radix-ui/react-icons';
 import { FeedbackButton } from '../header/FeedbackButton';
 import { DiscordButton } from '../header/DiscordButton';
 import { useAuth } from '@workos-inc/authkit-react';
-import { SESSION_ID_KEY } from '~/components/chat/ChefAuthWrapper';
+import { SESSION_ID_KEY } from '@/components/chat/ChefAuthWrapper';
 
 type ModalContent = { type: 'delete'; item: ChatHistoryItem } | null;
 
